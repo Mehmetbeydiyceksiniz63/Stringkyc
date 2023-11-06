@@ -5,11 +5,11 @@ from config import SUPPORT_CHAT
 
 keyboard = InlineKeyboardMarkup(
     [
-        [InlineKeyboardButton(text="𝐆ᴇɴᴇʀᴀᴛᴇ 𝐒ᴇssɪᴏɴ", callback_data="gensession")],
+        [InlineKeyboardButton(text="OTURUM OLUŞTUR", callback_data="gensession")],
         [
             InlineKeyboardButton(text="𝐒ᴜᴘᴘᴏʀᴛ", url=SUPPORT_CHAT),
             InlineKeyboardButton(
-                text="𝐒ᴏᴜʀᴄᴇ", url="https://github.com/TeamAloneOp/AloneXStringGenBot/fork"
+                text="OWNER", url="https://t.me/Meyit47"
             ),
         ],
     ]
@@ -26,5 +26,5 @@ gen_key = InlineKeyboardMarkup(
 )
 
 retry_key = InlineKeyboardMarkup(
-    [[InlineKeyboardButton(text="ᴛʀʏ ᴀɢᴀɪɴ", callback_data="gensession")]]
+    [[InlineKeyboardButton(text="YENİDEN DENE", callback_data="gensession")]]
 )
