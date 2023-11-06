@@ -46,19 +46,19 @@ async def gen_session(
     else:
         ty = f"ᴩʏʀᴏɢʀᴀᴍ v2"
 
-    await message.reply_text(f"» ᴛʀʏɪɴɢ ᴛᴏ sᴛᴀʀᴛ {ty} sᴇssɪᴏɴ ɢᴇɴᴇʀᴀᴛᴏʀ...")
+    await message.reply_text(f"» {ty} oturum oluşturucu başlıyor, 1 sn☝🏻...")
 
     try:
         api_id = await Alone.ask(
             identifier=(message.chat.id, user_id, None),
-            text="» ᴘʟᴇᴀsᴇ ᴇɴᴛᴇʀ ʏᴏᴜʀ ᴀᴘɪ ɪᴅ ᴛᴏ ᴘʀᴏᴄᴇᴇᴅ :",
+            text="» Devam etmek için lütfen API-ID'nizi girin :",
             filters=filters.text,
             timeout=300,
         )
     except ListenerTimeout:
         return await Alone.send_message(
             user_id,
-            "» ᴛɪᴍᴇᴅ ʟɪᴍɪᴛ ʀᴇᴀᴄʜᴇᴅ ᴏғ 5 ᴍɪɴᴜᴛᴇs.\n\nᴘʟᴇᴀsᴇ sᴛᴀʀᴛ ɢᴇɴᴇʀᴀᴛɪɴɢ sᴇssɪᴏɴ ᴀɢᴀɪɴ.",
+            "» 5 dakikalık zaman sınırına ulaşıldı.\n\nLütfen oturumu oluşturmaya tekrar başlayın.",
             reply_markup=retry_key,
         )
 
@@ -70,21 +70,21 @@ async def gen_session(
     except ValueError:
         return await Alone.send_message(
             user_id,
-            "» ᴛʜᴇ ᴀᴘɪ ɪᴅ ʏᴏᴜ'ᴠᴇ sᴇɴᴛ ɪs ɪɴᴠᴀʟɪᴅ.\n\nᴘʟᴇᴀsᴇ sᴛᴀʀᴛ ɢᴇɴᴇʀᴀᴛɪɴɢ sᴇssɪᴏɴ ᴀɢᴀɪɴ.",
+            "» Gönderdiğiniz API-ID geçersiz.\n\nLütfen oturum oluşturmaya tekrar başlayın.",
             reply_markup=retry_key,
         )
 
     try:
         api_hash = await Alone.ask(
             identifier=(message.chat.id, user_id, None),
-            text="» ᴘʟᴇᴀsᴇ ᴇɴᴛᴇʀ ʏᴏᴜʀ ᴀᴘɪ ʜᴀsʜ ᴛᴏ ᴘʀᴏᴄᴇᴇᴅ :",
+            text="» Devam etmek için lütfen API-HASH'inizi girin  :",
             filters=filters.text,
             timeout=300,
         )
     except ListenerTimeout:
         return await Alone.send_message(
             user_id,
-            "» ᴛɪᴍᴇᴅ ʟɪᴍɪᴛ ʀᴇᴀᴄʜᴇᴅ ᴏғ 5 ᴍɪɴᴜᴛᴇs.\n\nᴘʟᴇᴀsᴇ sᴛᴀʀᴛ ɢᴇɴᴇʀᴀᴛɪɴɢ sᴇssɪᴏɴ ᴀɢᴀɪɴ.",
+            "» 5 dakikalık zaman sınırına ulaşıldı.\n\nLütfen oturumu oluşturmaya tekrar başlayın.",
             reply_markup=retry_key,
         )
 
@@ -96,21 +96,21 @@ async def gen_session(
     if len(api_hash) < 30:
         return await Alone.send_message(
             user_id,
-            "» ᴛʜᴇ ᴀᴘɪ ʜᴀsʜ ʏᴏᴜ'ᴠᴇ sᴇɴᴛ ɪs ɪɴᴠᴀʟɪᴅ.\n\nᴘʟᴇᴀsᴇ sᴛᴀʀᴛ ɢᴇɴᴇʀᴀᴛɪɴɢ sᴇssɪᴏɴ ᴀɢᴀɪɴ.",
+            "» Gönderdiğiniz API-HASH geçersiz.\n\nLütfen oturum oluşturmaya tekrar başlayın .",
             reply_markup=retry_key,
         )
 
     try:
         phone_number = await Alone.ask(
             identifier=(message.chat.id, user_id, None),
-            text="» ᴘʟᴇᴀsᴇ ᴇɴᴛᴇʀ ʏᴏᴜʀ ᴘʜᴏɴᴇ ɴᴜᴍʙᴇʀ ᴛᴏ ᴘʀᴏᴄᴇᴇᴅ :",
+            text="» Devam etmek için lütfen telefon numaranızı girin :",
             filters=filters.text,
             timeout=300,
         )
     except ListenerTimeout:
         return await Alone.send_message(
             user_id,
-            "» ᴛɪᴍᴇᴅ ʟɪᴍɪᴛ ʀᴇᴀᴄʜᴇᴅ ᴏғ 5 ᴍɪɴᴜᴛᴇs.\n\nᴘʟᴇᴀsᴇ sᴛᴀʀᴛ ɢᴇɴᴇʀᴀᴛɪɴɢ sᴇssɪᴏɴ ᴀɢᴀɪɴ.",
+            "» 5 dakikalık zaman sınırına ulaşıldı.\n\nLütfen oturumu oluşturmaya tekrar başlayın.",
             reply_markup=retry_key,
         )
 
@@ -118,7 +118,7 @@ async def gen_session(
         return
     phone_number = phone_number.text
 
-    await Alone.send_message(user_id, "» ᴛʀʏɪɴɢ ᴛᴏ sᴇɴᴅ ᴏᴛᴩ ᴀᴛ ᴛʜᴇ ɢɪᴠᴇɴ ɴᴜᴍʙᴇʀ...")
+    await Alone.send_message(user_id, "» Verilen numaraya giriş kodu gönderiliyor...")
     if telethon:
         client = TelegramClient(StringSession(), api_id, api_hash)
     elif old_pyro:
@@ -137,26 +137,26 @@ async def gen_session(
     except FloodWait as f:
         return await Alone.send_message(
             user_id,
-            f"» ғᴀɪʟᴇᴅ ᴛᴏ sᴇɴᴅ ᴄᴏᴅᴇ ғᴏʀ ʟᴏɢɪɴ.\n\nᴘʟᴇᴀsᴇ ᴡᴀɪᴛ ғᴏʀ {f.value or f.x} sᴇᴄᴏɴᴅs ᴀɴᴅ ᴛʀʏ ᴀɢᴀɪɴ.",
+            f"» Giriş kodu gönderilemedi.\n\nLütfen {f.value veya f.x} saniye bekleyip tekrar deneyin..",
             reply_markup=retry_key,
         )
     except (ApiIdInvalid, ApiIdInvalidError, ApiIdInvalid1):
         return await Alone.send_message(
             user_id,
-            "» ᴀᴘɪ ɪᴅ ᴏʀ ᴀᴘɪ ʜᴀsʜ ɪs ɪɴᴠᴀʟɪᴅ.\n\nᴘʟᴇᴀsᴇ sᴛᴀʀᴛ ɢᴇɴᴇʀᴀᴛɪɴɢ ʏᴏᴜʀ sᴇssɪᴏɴ ᴀɢᴀɪɴ.",
+            "» API-ID veya API-HASH geçersiz.\n\nLütfen oturumunuzu yeniden oluşturmaya başlayın.",
             reply_markup=retry_key,
         )
     except (PhoneNumberInvalid, PhoneNumberInvalidError, PhoneNumberInvalid1):
         return await Alone.send_message(
             user_id,
-            "» ᴘʜᴏɴᴇ ɴᴜᴍʙᴇʀ ɪɴᴠᴀʟɪᴅ.\n\nᴘʟᴇᴀsᴇ sᴛᴀʀᴛ ɢᴇɴᴇʀᴀᴛɪɴɢ ʏᴏᴜʀ sᴇssɪᴏɴ ᴀɢᴀɪɴ.",
+            "» Telefon numarası geçersiz.\n\nLütfen oturumu yeniden oluşturmaya başlayın.",
             reply_markup=retry_key,
         )
 
     try:
         otp = await Alone.ask(
             identifier=(message.chat.id, user_id, None),
-            text=f"ᴘʟᴇᴀsᴇ ᴇɴᴛᴇʀ ᴛʜᴇ ᴏᴛᴘ sᴇɴᴛ ᴛᴏ {phone_number}.\n\nɪғ ᴏᴛᴩ ɪs <code>12345</code>, ᴩʟᴇᴀsᴇ sᴇɴᴅ ɪᴛ ᴀs <code>1 2 3 4 5.</code>",
+            text=f"Lütfen {phone_number} numarasına gönderilen giriş kodunu girin.\n\nEğer kod <code>12345</code> ise, Lütfen <code>1 2 3 4 5</code> şeklinde birer boşluk ile gönderin.",
             filters=filters.text,
             timeout=600,
         )
@@ -165,7 +165,7 @@ async def gen_session(
     except ListenerTimeout:
         return await Alone.send_message(
             user_id,
-            "» ᴛɪᴍᴇ ʟɪᴍɪᴛ ʀᴇᴀᴄʜᴇᴅ ᴏғ 10 ᴍɪɴᴜᴛᴇs.\n\nᴩʟᴇᴀsᴇ sᴛᴀʀᴛ ɢᴇɴᴇʀᴀᴛɪɴɢ ʏᴏᴜʀ sᴇssɪᴏɴ ᴀɢᴀɪɴ.",
+            "»10 dakikalık zaman sınırına ulaşıldı.\n\nLütfen oturumu oluşturmaya tekrar başlayın.",
             reply_markup=retry_key,
         )
 
@@ -178,27 +178,27 @@ async def gen_session(
     except (PhoneCodeInvalid, PhoneCodeInvalidError, PhoneCodeInvalid1):
         return await Alone.send_message(
             user_id,
-            "» ᴛʜᴇ ᴏᴛᴩ ʏᴏᴜ'ᴠᴇ sᴇɴᴛ ɪs <b>ᴡʀᴏɴɢ.</b>\n\nᴩʟᴇᴀsᴇ sᴛᴀʀᴛ ɢᴇɴᴇʀᴀᴛɪɴɢ ʏᴏᴜʀ sᴇssɪᴏɴ ᴀɢᴀɪɴ.",
+            "» Gönderdiğiniz giriş kodu <b>Yanlış</b>.\n\nLütfen oturumunuzu yeniden oluşturmaya başlayın.",
             reply_markup=retry_key,
         )
     except (PhoneCodeExpired, PhoneCodeExpiredError, PhoneCodeExpired1):
         return await Alone.send_message(
             user_id,
-            "» ᴛʜᴇ ᴏᴛᴩ ʏᴏᴜ'ᴠᴇ sᴇɴᴛ ɪs <b>ᴇxᴩɪʀᴇᴅ.</b>\n\nᴩʟᴇᴀsᴇ sᴛᴀʀᴛ ɢᴇɴᴇʀᴀᴛɪɴɢ ʏᴏᴜʀ sᴇssɪᴏɴ ᴀɢᴀɪɴ.",
+            "» Gönderdiğiniz giriş kodu'nun <b>Süresi doldu.</b>Lütfen oturumunuzu yeniden oluşturmaya başlayın.",
             reply_markup=retry_key,
         )
     except (SessionPasswordNeeded, SessionPasswordNeededError, SessionPasswordNeeded1):
         try:
             pwd = await Alone.ask(
                 identifier=(message.chat.id, user_id, None),
-                text="» ᴘʟᴇᴀsᴇ ᴇɴᴛᴇʀ ʏᴏᴜʀ ᴛᴡᴏ sᴛᴇᴘ ᴠᴇʀɪғɪᴄᴀᴛɪᴏɴ ᴘᴀssᴡᴏʀᴅ ᴛᴏ ᴄᴏɴᴛɪɴᴜᴇ :",
+                text="» Devam etmek için lütfen iki adımlı doğrulama şifrenizi girin :",
                 filters=filters.text,
                 timeout=300,
             )
         except ListenerTimeout:
             return Alone.send_message(
                 user_id,
-                "» ᴛɪᴍᴇᴅ ʟɪᴍɪᴛ ʀᴇᴀᴄʜᴇᴅ ᴏғ 5 ᴍɪɴᴜᴛᴇs.\n\nᴘʟᴇᴀsᴇ sᴛᴀʀᴛ ɢᴇɴᴇʀᴀᴛɪɴɢ sᴇssɪᴏɴ ᴀɢᴀɪɴ.",
+                "» 5 dakikalık zaman sınırına ulaşıldı.\n\nLütfen oturumu oluşturmaya tekrar başlayın.",
                 reply_markup=retry_key,
             )
 
@@ -214,15 +214,15 @@ async def gen_session(
         except (PasswordHashInvalid, PasswordHashInvalidError, PasswordHashInvalid1):
             return await Alone.send_message(
                 user_id,
-                "» ᴛʜᴇ ᴩᴀssᴡᴏʀᴅ ʏᴏᴜ'ᴠᴇ sᴇɴᴛ ɪs ᴡʀᴏɴɢ.\n\nᴩʟᴇᴀsᴇ sᴛᴀʀᴛ ɢᴇɴᴇʀᴀᴛɪɴɢ ʏᴏᴜʀ sᴇssɪᴏɴ ᴀɢᴀɪɴ.",
+                "» Gönderdiğiniz şifre yanlış.\n\nLütfen oturumunuzu yeniden oluşturmaya başlayın.",
                 reply_markup=retry_key,
             )
 
     except Exception as ex:
-        return await Alone.send_message(user_id, f"ᴇʀʀᴏʀ : <code>{str(ex)}</code>")
+        return await Alone.send_message(user_id, f"HATA : <code>{str(ex)}</code>")
 
     try:
-        txt = "ʜᴇʀᴇ ɪs ʏᴏᴜʀ {0} sᴛʀɪɴɢ sᴇssɪᴏɴ\n\n<code>{1}</code>\n\nᴀ sᴛʀɪɴɢ ɢᴇɴᴇʀᴀᴛᴏʀ ʙᴏᴛ ʙʏ <a href={2}>ᴀʟᴏɴᴇ ᴀssᴏᴄɪᴀᴛɪᴏɴ</a>\n☠ <b>ɴᴏᴛᴇ :</b> ᴅᴏɴ'ᴛ sʜᴀʀᴇ ɪᴛ ᴡɪᴛʜ ʏᴏᴜʀ ɢɪʀʟғʀɪᴇɴᴅ."
+        txt = "İşte {0} dize oturumunuz\n\n<code>{1}</code>\n\n<a href={2}>Yalnız ilişkilendirme</a> tarafından sağlanan bir dize oluşturma botu\n<b>Not :</b>Kimseyle paylaşmayın."
         if telethon:
             string_session = client.session.save()
             await client.send_message(
@@ -231,7 +231,7 @@ async def gen_session(
                 link_preview=False,
                 parse_mode="html",
             )
-            await client(JoinChannelRequest("@AloneXBots"))
+            await client(JoinChannelRequest("@S1F1RB1RSOHBETT"))
         else:
             string_session = await client.export_session_string()
             await client.send_message(
@@ -239,19 +239,19 @@ async def gen_session(
                 txt.format(ty, string_session, SUPPORT_CHAT),
                 disable_web_page_preview=True,
             )
-            await client.join_chat("AloneXBots")
+            await client.join_chat("S1F1RB1RSOHBET")
     except KeyError:
         pass
     try:
         await client.disconnect()
         await Alone.send_message(
             chat_id=user_id,
-            text=f"sᴜᴄᴄᴇssғᴜʟʟʏ ɢᴇɴᴇʀᴀᴛᴇᴅ ʏᴏᴜʀ {ty} sᴛʀɪɴɢ sᴇssɪᴏɴ.\n\nᴘʟᴇᴀsᴇ ᴄʜᴇᴄᴋ ʏᴏᴜʀ sᴀᴠᴇᴅ ᴍᴇssᴀɢᴇs ғᴏʀ ɢᴇᴛᴛɪɴɢ ɪᴛ.\n\nᴀ sᴛʀɪɴɢ ɢᴇɴᴇʀᴀᴛᴏʀ ʙᴏᴛ ʙʏ <a href={SUPPORT_CHAT}>ᴀʟᴏɴᴇ ᴀssᴏᴄɪᴀᴛɪᴏɴ</a>.",
+            text=f"{ty} dize oturumunuz başarıyla oluşturuldu.\n\nBunu almak için lütfen kayıtlı mesajlarınızı kontrol edin.\n\nMEYİTZADE'nin hazırladığı dize oluşturma botunu güvenle kullanabilirsiniz.",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton(
-                            text="sᴀᴠᴇᴅ ᴍᴇssᴀɢᴇs",
+                            text="Kayıtlı Mesajlarda.",
                             url=f"tg://openmessage?user_id={user_id}",
                         )
                     ]
@@ -266,17 +266,17 @@ async def gen_session(
 async def cancelled(message):
     if "/cancel" in message.text:
         await message.reply_text(
-            "» ᴄᴀɴᴄᴇʟʟᴇᴅ ᴛʜᴇ ᴏɴɢᴏɪɴɢ sᴛʀɪɴɢ ɢᴇɴᴇʀᴀᴛɪᴏɴ ᴩʀᴏᴄᴇss.", reply_markup=retry_key
+            "» Devam eden dize oluşturma süreci iptal edildi.", reply_markup=retry_key
         )
         return True
     elif "/restart" in message.text:
         await message.reply_text(
-            "» sᴜᴄᴄᴇssғᴜʟʟʏ ʀᴇsᴛᴀʀᴛᴇᴅ ᴛʜɪs ʙᴏᴛ.", reply_markup=retry_key
+            "» Bu bot başarıyla yeniden başlatıldı.", reply_markup=retry_key
         )
         return True
     elif message.text.startswith("/"):
         await message.reply_text(
-            "» ᴄᴀɴᴄᴇʟʟᴇᴅ ᴛʜᴇ ᴏɴɢᴏɪɴɢ sᴛʀɪɴɢ ɢᴇɴᴇʀᴀᴛɪᴏɴ ᴩʀᴏᴄᴇss.", reply_markup=retry_key
+            "» Devam eden dize oluşturma süreci iptal edildi.", reply_markup=retry_key
         )
         return True
     else:
