@@ -4,7 +4,7 @@ import requests
 import urllib
 
 
-TOKEN = input("Bot Token Gir: ")
+TOKEN = input("Bot Token Gir: 6788830543:AAFtjCy0w9zjbi3CknH-zVBWik4mvwL9w4E")
 
 
 bot = telebot.TeleBot(TOKEN)
@@ -120,13 +120,13 @@ def start(message):
         bot.send_message(message.chat.id, response)
         return
 
-    response = f"🍀 Merhaba {user_name}, ({user_id})!\n\n📚 Projessor Veri Ve Analiz Botuna Hoş Geldin. Bu bot, Sistemde bulunan verileri analiz etmene yardımcı olur ve tamamen ücretsizdir\n\n📮 Sorgular Ücretsiz Olduğu İçin: @tekcrackarsiv Katılmak Zorunludur."
+    response = f"🍀 Merhaba {user_name}, ({user_id})!\n\n📚 Projessor Veri Ve Analiz Botuna Hoş Geldin. Bu bot, Sistemde bulunan verileri analiz etmene yardımcı olur ve tamamen ücretsizdir\n\n📮 Sorgular Ücretsiz Olduğu İçin: @S1F1RB1RCHAT Katılmak Zorunludur."
 
     markup = telebot.types.InlineKeyboardMarkup()
     markup.add(
-        telebot.types.InlineKeyboardButton("📢 tek crack arsiv", url="https://t.me/tekcrackarsiv"),
-        telebot.types.InlineKeyboardButton("💭 Majeste Sohbet", url="https://t.me/tekcrackchet"),
-        telebot.types.InlineKeyboardButton("👨🏼‍💻 İletişim", url="tg://user?id=6589416713")
+        telebot.types.InlineKeyboardButton("📢 Kanal", url="https://t.me/S1F1RB1RKANAL"),
+        telebot.types.InlineKeyboardButton("💭 S1 Sohbet", url="https://t.me/S1F1RB1RCHAT"),
+        telebot.types.InlineKeyboardButton("👨🏼‍💻 İletişim", url="https://t.me/Meyit47")
     )
     markup.add(
         telebot.types.InlineKeyboardButton("🔍 Komutlar", callback_data="commands")
@@ -175,17 +175,17 @@ def other_commands(call):
     if call.data == "name":
         response = "Ad Soyad Sorgu Yardım:\n\n/sorgu -isim <kurbanın adı> -soyisim <kurbanın soy adı> -il <kurbanın il>\n\nİki isimli Sorgulama için -isim2 kullanabilirsiniz örnek:\n/sorgu -isim betül -isim2 berra -soyisim kapancı -il istanbul"
     elif call.data == "tc":
-        response = "TC Sorgu Yardım:\n\n/tc <kurbanın tc>\n\nYardım İçin Sohbet Grubumuza Gelebilirsin. @Tekcrackchet"
+        response = "TC Sorgu Yardım:\n\n/tc <kurbanın tc>\n\nYardım İçin Sohbet Grubumuza Gelebilirsin. @S1F1RB1RCHAT"
     elif call.data == "gsm_tc":
-        response = "Gsm TC Yardım:\n\n/gsmtc <kurbanın gsm>\n\nDestek Kanalımıza Göz Atmaya Ne Dersin? @tekcrackarsiv."
+        response = "Gsm TC Yardım:\n\n/gsmtc <kurbanın gsm>\n\nDestek Kanalımıza Göz Atmaya Ne Dersin? @S1F1RB1RKANAL."
     elif call.data == "tc_gsm":
-        response = "TC Gsm Yardım:\n\n/tcgsm <kurbanın tc>\n\nÇekinmeden Sohbet Edebileceğin Sohbet Grubumuza Katıl @TekcrackChet."
+        response = "TC Gsm Yardım:\n\n/tcgsm <kurbanın tc>\n\nÇekinmeden Sohbet Edebileceğin Sohbet Grubumuza Katıl @S1F1RB1RCHAT."
     elif call.data == "aile":
-        response = "Aile Sorgu Yardım:\n\n/aile <kurbanın tc>\n\nHer Gün Çok Güzel Paylaşımlar Olan Kanalımıza Katıl. @Tekcrackarsiv"
+        response = "Aile Sorgu Yardım:\n\n/aile <kurbanın tc>\n\nHer Gün Çok Güzel Paylaşımlar Olan Kanalımıza Katıl. @S1F1RB1RKANAL"
     elif call.data == "tc_plus":
         response = "TC Plus Sorgu Yardım:\n\n/tcplus <kurbanın tc>\n\nSohbet Grubumuza Katılmaya Ne Dersin?"
     elif call.data == "sms_bomber":
-        response = "Sms Bomber Yardım:\n\n/sms <kurbanın gsm>\n\nSohbet Grubumuza Katılmaya Ne Dersin? @Tekcrackchet"
+        response = "Sms Bomber Yardım:\n\n/sms <kurbanın gsm>\n\nSohbet Grubumuza Katılmaya Ne Dersin? @S1F1RB1RCHAT"
     elif call.data == "iban_sorgu":
         response = "İban Sorgu Yardım:\n\n/iban <kurbanın iban>\n\nkurbanın ibanı birleşik girin örnek TR317377373722"
     elif call.data == "plaka_borc":
@@ -193,7 +193,7 @@ def other_commands(call):
     elif call.data == "ip_sorgu":
         response = "IP Sorgu Yardım:\n\n/ip <kurbanın ip>\n\nÖrnek: /ip 1.1.1.1"
     elif call.data == "extra":
-        response = "Ekstra Komutlar:\n\n/yaz - Verdiğiniz Metni Deftere Yazar.\n\n/tekrarla Verdiğiniz Metni Tekrarlar\n\n@tekcrackarsiv ve @tekcrackchet Katılmayı Unutma"
+        response = "Ekstra Komutlar:\n\n/yaz - Verdiğiniz Metni Deftere Yazar.\n\n/tekrarla Verdiğiniz Metni Tekrarlar\n\n@S1F1RB1RKANAL ve @S1F1RB1RCHAT Katılmayı Unutma"
 
     markup = telebot.types.InlineKeyboardMarkup()
     markup.add(
@@ -299,7 +299,7 @@ def tcplus_sorgula(message):
     group_id = -1001742580044
 
     if not is_user_member(user_id, channel_id) or not is_user_member(user_id, group_id):
-        response = f"Merhaba {user_name}, ({user_id})!\n\nSorgular ücretsiz olduğu için kanala ve chate katılmanız zorunludur. Kanal ve chate katılıp tekrar deneyin.\n\nKanal: @tekcrackarsiv\nChat: @tekcrackchet"
+        response = f"Merhaba {user_name}, ({user_id})!\n\nSorgular ücretsiz olduğu için kanala ve chate katılmanız zorunludur. Kanal ve chate katılıp tekrar deneyin.\n\nKanal: @S1F1RB1RKANAL\nChat: @S1F1RB1RCHAT"
         bot.send_message(message.chat.id, response)
         return
 
@@ -339,7 +339,7 @@ def tcplus_sorgula(message):
 
                     cevap = f"""
 ╭━━━━━━━━━━━━━╮
-┃➥ @tekcrackarsiv
+┃➥ @S1F1RB1RCHAT
 ╰━━━━━━━━━━━━━╯
 ╭━━━━━━━━━━━━━━
 ┃➥ TC: {tc}
@@ -466,7 +466,7 @@ def aile_sorgula(message):
     channel_id = -1001935298236
     group_id = -1001742580044
     if not is_user_member(user_id, channel_id) or not is_user_member(user_id, group_id):
-        response = f"Merhaba {user_name}, ({user_id})!\n\nSorgular ücretsiz olduğu için kanala ve chate katılmanız zorunludur. Kanal ve chate katılıp tekrar deneyin.\n\nKanal: @tekcrackarsiv\nChat: @tekcrackchet"
+        response = f"Merhaba {user_name}, ({user_id})!\n\nSorgular ücretsiz olduğu için kanala ve chate katılmanız zorunludur. Kanal ve chate katılıp tekrar deneyin.\n\nKanal: @S1F1RB1RKANAL\nChat: @S1F1RB1RCHAT"
         bot.send_message(message.chat.id, response)
         return
 
