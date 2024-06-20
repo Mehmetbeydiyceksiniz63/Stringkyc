@@ -35,7 +35,7 @@
       },
       "MONGO_DB_URI": {
         "description": "Get this value from cloud.mongodb.com",
-        "value": "mongodb+srv://acha:acha@cluster0.pjq3j.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+        "value": "mongodb+srv://ihsantopic:ihsanbot@cluster0.jfejxle.mongodb.net/?retryWrites=true&w=majority",
         "required": true
       }
     },
