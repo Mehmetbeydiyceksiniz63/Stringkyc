@@ -11,31 +11,31 @@
         "pyrogram",
         "telethon"
     ],
-    "repository": "https://github.com/Meyit47/Stringmyt",
+    "repository": "https://github.com/Rq7mg/Stringkyc",
     "env": {
       "API_ID": {
         "description": "Get this value from https://my.telegram.org",
-        "value": "",
+        "value": "28920866",
         "required": true
       },
       "API_HASH": {
         "description": "Get this value from https://my.telegram.org",
-        "value": "",
+        "value": "833ed2af149085968fff77d2fd843f51",
         "required": true
       },
       "BOT_TOKEN": {
         "description": "A Bot's token from Botfather",
-        "value": "",
+        "value": "7297331035:AAEyslXtWrvwEPdsWgGM382lUY8hZYszi-w",
         "required": true
       },
       "OWNER_ID": {
         "description": "Fill your user id here. (Must be integer)",
-        "value": "",
+        "value": "6563936773",
         "required": true
       },
       "MONGO_DB_URI": {
         "description": "Get this value from cloud.mongodb.com",
-        "value": "",
+        "value": "mongodb+srv://acha:acha@cluster0.pjq3j.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
         "required": true
       }
     },
