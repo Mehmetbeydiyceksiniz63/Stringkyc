@@ -246,7 +246,7 @@ async def gen_session(
         await client.disconnect()
         await Alone.send_message(
             chat_id=user_id,
-            text=f"{ty} dize oturumunuz başarıyla oluşturuldu.\n\nBunu almak için lütfen kayıtlı mesajlarınızı kontrol edin.\n\nMEYİTZADE'nin hazırladığı dize oluşturma botunu güvenle kullanabilirsiniz.",
+            text=f"{ty} dize oturumunuz başarıyla oluşturuldu.\n\nBunu almak için lütfen kayıtlı mesajlarınızı kontrol edin.\n\nKıyıcı Boss`un hazırladığı dize oluşturma botunu güvenle kullanabilirsiniz.",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
