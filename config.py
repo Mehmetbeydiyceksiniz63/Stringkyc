@@ -8,8 +8,8 @@ load_dotenv()
 API_ID = int(getenv("API_ID", "22659994"))
 API_HASH = getenv("API_HASH", "2c89964a0088a7a39ec819c60ae67de7")
 
-BOT_TOKEN = getenv("BOT_TOKEN", "7439639831:AAGVCRa7TNt5Gh5vhw2FRNeFubTHeA-w6qI")
+BOT_TOKEN = getenv("BOT_TOKEN", "7037897729:AAHzFNNW6b9X0SNoz2cXUVmiQoHySDHuBF8")
 MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://kurt67143:nays@cluster0.vjg7bma.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 
-OWNER_ID = int(getenv("OWNER_ID", "6604501109"))
+OWNER_ID = int(getenv("OWNER_ID", "7268753735"))
 SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/kumsalmuzikk")
